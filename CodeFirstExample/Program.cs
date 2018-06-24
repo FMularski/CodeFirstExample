@@ -10,6 +10,14 @@ namespace CodeFirstExample
     {
         static void Main(string[] args)
         {
+            JupiterContext Context = new JupiterContext();
+            var People = Context.People;
+            var Cars = Context.Cars;
+
+            People.Single(p => p.FirstName == "Aleksandra")._Car = Cars.SingleOrDefault(c => c.Brand == "Seat");
+            People.Single(p => p.FirstName == "Filip")._Car = Cars.SingleOrDefault(c => c.Brand == "Deawoo");
+
+            Context.SaveChanges();
         }
     }
 }

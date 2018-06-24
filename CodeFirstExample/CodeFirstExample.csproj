@@ -32,7 +32,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -42,11 +49,76 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Car.cs" />
+    <Compile Include="EntitiesConfigurations\CarConfiguration.cs" />
+    <Compile Include="EntitiesConfigurations\PersonConfiguration.cs" />
+    <Compile Include="JupiterContext.cs" />
+    <Compile Include="Migrations\201806231125094_Init.cs" />
+    <Compile Include="Migrations\201806231125094_Init.Designer.cs">
+      <DependentUpon>201806231125094_Init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806231419358_Changed_FirstNam_To_FirstName_InPeopleTable.cs" />
+    <Compile Include="Migrations\201806231419358_Changed_FirstNam_To_FirstName_InPeopleTable.Designer.cs">
+      <DependentUpon>201806231419358_Changed_FirstNam_To_FirstName_InPeopleTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806231851363_foo.cs" />
+    <Compile Include="Migrations\201806231851363_foo.Designer.cs">
+      <DependentUpon>201806231851363_foo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806231858040_PopulateCarsTable.cs" />
+    <Compile Include="Migrations\201806231858040_PopulateCarsTable.Designer.cs">
+      <DependentUpon>201806231858040_PopulateCarsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806240800225_ChangedCarIdToCarSuperIdColumnInPeopleTable.cs" />
+    <Compile Include="Migrations\201806240800225_ChangedCarIdToCarSuperIdColumnInPeopleTable.Designer.cs">
+      <DependentUpon>201806240800225_ChangedCarIdToCarSuperIdColumnInPeopleTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806240807541_ChangedCarForeignKeyInPeopleTable.cs" />
+    <Compile Include="Migrations\201806240807541_ChangedCarForeignKeyInPeopleTable.Designer.cs">
+      <DependentUpon>201806240807541_ChangedCarForeignKeyInPeopleTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806240810344_GiveCars.cs" />
+    <Compile Include="Migrations\201806240810344_GiveCars.Designer.cs">
+      <DependentUpon>201806240810344_GiveCars.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806240830403_AddedFluentAPI.cs" />
+    <Compile Include="Migrations\201806240830403_AddedFluentAPI.Designer.cs">
+      <DependentUpon>201806240830403_AddedFluentAPI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201806231125094_Init.resx">
+      <DependentUpon>201806231125094_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806231419358_Changed_FirstNam_To_FirstName_InPeopleTable.resx">
+      <DependentUpon>201806231419358_Changed_FirstNam_To_FirstName_InPeopleTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806231851363_foo.resx">
+      <DependentUpon>201806231851363_foo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806231858040_PopulateCarsTable.resx">
+      <DependentUpon>201806231858040_PopulateCarsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806240800225_ChangedCarIdToCarSuperIdColumnInPeopleTable.resx">
+      <DependentUpon>201806240800225_ChangedCarIdToCarSuperIdColumnInPeopleTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806240807541_ChangedCarForeignKeyInPeopleTable.resx">
+      <DependentUpon>201806240807541_ChangedCarForeignKeyInPeopleTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806240810344_GiveCars.resx">
+      <DependentUpon>201806240810344_GiveCars.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806240830403_AddedFluentAPI.resx">
+      <DependentUpon>201806240830403_AddedFluentAPI.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
